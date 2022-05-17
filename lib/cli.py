@@ -1,11 +1,12 @@
 from email import message
 from bdb import Breakpoint
 from cocktail import Cocktail
+from api import API
 
 
 class Cli:
     def __init__(self):
-        Cocktail.get_all_drinks()
+        API.get_all_drinks()
         self.start()
 
     def start(self):
@@ -29,7 +30,7 @@ class Cli:
             print(f'Mixing your {drink.name} now!')
             print(' ')
             if not hasattr(drink, 'instructions'):
-                Cocktail.get_drink_details(Cocktail, drink)
+                API.get_drink_details(Cocktail, drink)
             self.print_cocktail(drink)
 
             print(' ')
