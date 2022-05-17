@@ -11,6 +11,6 @@ from environment import *
 from cli import Cli
 from cocktail import Cocktail
 
-print('Making CLI now.....')
+
 
 Cli()
