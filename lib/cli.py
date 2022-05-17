@@ -68,7 +68,7 @@ class Cli:
         print(' ')
         print('Ingredients:')
         for idx, ingredient in enumerate(drink.ingredients):
-            print(f'- {drink.measures[idx]}  {ingredient}')
+            print(f'- {drink.measures[idx]} {ingredient}')
         print(' ')
         print(f'Glass: {drink.glass}')
         print(' ')

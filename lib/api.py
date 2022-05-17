@@ -20,8 +20,8 @@ class API:
         drink.measures = []
         for attribute in cocktail.keys():
 
-            if 'Ingredient' in attribute and cocktail[attribute] != None:
+            if 'Ingredient' in attribute and cocktail[attribute] != None and cocktail[attribute] != "":
                 drink.ingredients.append(cocktail[attribute])
                 
-            elif 'Measure' in attribute and cocktail[attribute] != None:
+            elif 'Measure' in attribute and cocktail[attribute] != None and cocktail[attribute] != "":
                 drink.measures.append(cocktail[attribute])
