@@ -22,5 +22,17 @@ class Cocktail:
         response_API = requests.get(f'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={drink.id}')
         cocktail = response_API.json()["drinks"][0]
         drink.instructions = cocktail['strInstructions']
+        drink.glass = cocktail['strGlass']
+        drink.ingredients = []
+        drink.measures = []
+        for attribute in cocktail.keys():
 
+            if 'Ingredient' in attribute and cocktail[attribute] != None:
+                # breakpoint()
+                drink.ingredients.append(cocktail[attribute])
+                
+            elif 'Measure' in attribute and cocktail[attribute] != None:
+                drink.measures.append(cocktail[attribute])
+
+  
     

@@ -30,8 +30,8 @@ class Cli:
             print(' ')
             if not hasattr(drink, 'instructions'):
                 Cocktail.get_drink_details(Cocktail, drink)
-            # print details
-            print(drink.instructions)
+            self.print_cocktail(drink)
+
             print(' ')
             message = 'Would you like to see another delicious drink? (y/n):   '    
             pick = input(message)
@@ -59,3 +59,18 @@ class Cli:
     def print_cocktails(self):
             for idx, cocktail in enumerate(Cocktail.all):
                 print(f'{idx + 1}.  {cocktail.name}' )
+
+    def print_cocktail(self, drink):
+        print('')
+        print(f'{drink.name} Recipe:')
+        print('--------------------------')
+        print(' ')
+        print('Ingredients:')
+        for idx, ingredient in enumerate(drink.ingredients):
+            print(f'- {drink.measures[idx]}  {ingredient}')
+        print(' ')
+        print(f'Glass: {drink.glass}')
+        print(' ')
+        print('Instructions:')
+        print(' ')
+        print(drink.instructions)
